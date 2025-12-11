@@ -1,0 +1,224 @@
+/* === Global === */
+
+:root {
+  --qa-bg: #18181b;
+  --qa-bg-elevated: #212127;
+  --qa-bg-soft: #262630;
+  --qa-border: #2f2f3a;
+  --qa-text: #f9fafb;
+  --qa-text-muted: #d0c2c7;
+  --qa-accent: #f4482b;
+  --qa-accent-soft: rgba(244, 72, 43, 0.14);
+  --qa-success: #33b679;
+  --qa-success-soft: rgba(51, 182, 121, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, #262630 0, #18181b 40%, #000 100%);
+  color: var(--qa-text);
+}
+
+/* === Root Layout === */
+
+#qa-root {
+  padding: 12px 14px 14px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* === Header === */
+
+.qa-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.qa-header-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qa-logo-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--qa-accent);
+  box-shadow: 0 0 8px rgba(244, 72, 43, 0.7);
+}
+
+.qa-header h1 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.qa-subtitle {
+  font-size: 11px;
+  color: var(--qa-text-muted);
+  opacity: 0.9;
+}
+
+/* === Toolbar (üst mini info bar; istersen ekleyebilirsin) === */
+
+.qa-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.qa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--qa-bg-soft);
+  border: 1px solid var(--qa-border);
+  font-size: 10px;
+  color: var(--qa-text-muted);
+}
+
+.qa-dot-green {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--qa-success);
+  box-shadow: 0 0 6px rgba(51, 182, 121, 0.7);
+}
+
+/* === Tabs === */
+
+.qa-tabs {
+  margin-top: 6px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.qa-tab {
+  border: 1px solid var(--qa-border);
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  cursor: pointer;
+  background: rgba(24, 24, 27, 0.9);
+  color: var(--qa-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.08s ease;
+}
+
+.qa-tab::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #3f3f46;
+}
+
+.qa-tab:hover {
+  background: #232329;
+  border-color: #3b3b46;
+  transform: translateY(-0.5px);
+}
+
+.qa-tab.active {
+  background: var(--qa-accent-soft);
+  border-color: var(--qa-accent);
+  color: var(--qa-text);
+}
+
+.qa-tab.active::before {
+  background: var(--qa-accent);
+}
+
+/* === Content Area === */
+
+#qa-content {
+  margin-top: 8px;
+  padding-right: 4px;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* İnce scrollbar */
+#qa-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+#qa-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#qa-content::-webkit-scrollbar-thumb {
+  background: #2f2f3a;
+  border-radius: 999px;
+}
+
+/* === Sections === */
+
+.qa-section {
+  border-radius: 10px;
+  background: linear-gradient(
+      135deg,
+      rgba(244, 72, 43, 0.08),
+      transparent 40%,
+      rgba(51, 182, 121, 0.06)
+    ),
+    var(--qa-bg-elevated);
+  border: 1px solid var(--qa-border);
+  padding: 10px 12px;
+  position: relative;
+}
+
+.qa-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  border: 1px solid transparent;
+  /* Köşede hafif glow */
+  background: linear-gradient(
+      135deg,
+      rgba(244, 72, 43, 0.4),
+      transparent 40%,
+      rgba(51, 182, 121, 0.3)
+    )
+    border-box;
+  opacity: 0.14;
+}
+
+.qa-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.qa-section-title {
+  font-size: 12px;

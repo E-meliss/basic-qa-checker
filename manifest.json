@@ -1,0 +1,10 @@
+{
+  "name": "Insider QA Checklist",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "description": "Insider kampanyaları için DevTools Basic QA checklist paneli",
+  "devtools_page": "devtools.html",
+  "permissions": [
+    "storage"
+  ]
+}

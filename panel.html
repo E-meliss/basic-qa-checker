@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insider QA Checklist</title>
+    <link rel="stylesheet" href="panel.css" />
+  </head>
+  <body>
+    <div id="qa-root">
+      <header class="qa-header">
+        <h1>Insider QA Checklist</h1>
+      </header>
+
+      <nav class="qa-tabs">
+        <button class="qa-tab active" data-target="lead-collection">Lead Collection</button>
+        <button class="qa-tab" data-target="recommender">Recommender</button>
+        <button class="qa-tab" data-target="custom">Custom</button>
+        <button class="qa-tab" data-target="web-templates">Web Templates</button>
+        <button class="qa-tab" data-target="general">Genel Kontroller</button>
+      </nav>
+
+      <main id="qa-content"></main>
+    </div>
+
+    <script src="panel.js"></script>
+  </body>
+</html>
