@@ -1,4 +1,4 @@
-Extention'ı kurmak için:
+Extension'ı kurmak için:
 
 Chrome’da chrome://extensions/ sayfasını aç.
 
